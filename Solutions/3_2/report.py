@@ -74,5 +74,10 @@ def portfolio_report(portfoliofile,pricefile):
     # Print it out
     print_report(report)
 
-portfolio_report('../../Work/Data/portfolio.csv',
-                 '../../Work/Data/prices.csv')
+portfolio_file = '/home/andrew/projects/python/practical-python/Work/Data/portfolio.csv'
+price_file = '/home/andrew/projects/python/practical-python/Work/Data/prices.csv'
+portfolio_report(portfolio_file, price_file)
+
+# portfolio_report('../../Work/Data/portfolio.csv',
+#                  '../../Work/Data/prices.csv')
+
