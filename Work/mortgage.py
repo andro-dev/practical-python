@@ -33,3 +33,4 @@ while principal > 0:
 
 print('Total paid', round(total_paid, 1))
 print('Total months', months)
+
