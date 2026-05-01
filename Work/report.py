@@ -12,10 +12,8 @@ def read_portfolio(filename):
         try:
             headers =next(rows)
             for row in rows:
-                symbol = row[0]
-                nshares = int(row[1])
-                price = float(row[2])
-                holding = (symbol, nshares, price)
+                name,shares, price = row
+                holding = {"name" : name, "shares" : int(shares), "price" : float(price) }
                 portfolio.append(holding)
         except Error as e:
             print("Error:", e)
@@ -23,15 +21,16 @@ def read_portfolio(filename):
     return portfolio
 
 def main():
-    from pprint import pp
-
+    from pprint import pprint
+    #see if file name was passed as a 2nd argument from command line
+    #ex. python3 report.py Data/portfolio2.csv
     if len(sys.argv) == 2:
         filename = sys.argv[1]
     else:
         filename = "Data/portfolio.csv"
-        
+
     portfolio = read_portfolio(filename)
-    pp(portfolio)
+    pprint(portfolio)
 
 
 
