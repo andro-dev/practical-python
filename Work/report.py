@@ -2,7 +2,6 @@
 #
 # Exercise 2.4
 import csv
-from sys import argv
 import sys
 
 def read_portfolio(filename):
@@ -10,12 +9,12 @@ def read_portfolio(filename):
     with open(filename, 'rt') as f:
         rows = csv.reader(f)
         try:
-            headers =next(rows)
+            headers = next(rows)
             for row in rows:
                 name,shares, price = row
                 holding = {"name" : name, "shares" : int(shares), "price" : float(price) }
                 portfolio.append(holding)
-        except Error as e:
+        except Exception as e:
             print("Error:", e)
 
     return portfolio
